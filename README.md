@@ -2,7 +2,8 @@
 development of a beach clenaer autonomous mobile robot
 you need to locate your files in the correct folder. 
 
-you need to change the serial_node.py file to run multiple arduinos:
+you need to change the serial_node.py file to run multiple arduinos: 
+https://answers.ros.org/question/12684/using-multiple-arduinos-running-multiple-nodes/
 rospy.init_node("serial_node", anonymous=True) 
     rospy.loginfo("ROS Serial Python Node {}".format(rospy.get_caller_id()))
     
