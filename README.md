@@ -7,8 +7,13 @@ rospy.init_node("serial_node", anonymous=True)
     rospy.loginfo("ROS Serial Python Node {}".format(rospy.get_caller_id()))
     
 
-the arduino code "ros_speed2" is the file that works with ros.
 
-use this comand:
-rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB3
 
+use this comand to try in one arduino nano:
+rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0
+
+FOLLOW THIS TUTORIAL FOR BNO005
+https://automaticaddison.com/visualize-imu-data-using-the-bno055-ros-and-jetson-nano/
+
+FOLLOW THIS TUTORIAL http://wiki.ros.org/nmea_navsat_driver
+FOR KINETIC
