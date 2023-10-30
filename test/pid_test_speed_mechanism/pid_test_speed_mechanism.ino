@@ -1,100 +1,88 @@
-#include <ros.h>
-#include <geometry_msgs/Twist.h>
-#include <ros/time.h>
-
-ros::NodeHandle  nh;
-
+#define motorDir1 6
+#define motorDir2 4
+#define motorpwm 5
 #define encoderPinA 2
 #define encoderPinB 3
-// #define motorDir 6
-// #define motorpwm 5
-#define motorDir 10
-#define motorpwm 9
-
-#define LOOPTIME 10
 
 
-int counts = 8400;  // Encoder Pulse per revolution.
+//  Encoder
 volatile long  encoderValue = 0;
-
-
 unsigned long previousMillis = 0;
-long interval = 100; 
-float input;
-float setpoint;
 
-//PID VARIABLES
+int counts = 6533;  // Encoder Pulse per revolution.
+
+//Define Variables we'll be connecting to
+float input, setpoint;
+long dt = 100;  // Sampling time in seconds
+
+//Specify the links and initial tuning parameters
 float output, cv1, error, error1, error2;
-float Kp=2, Kd=0.00, Ki=50, Tm=0.1;
+//float Kp=6, Kd=0.00, Ki=10, Tm=0.1;            // modify for optimal performance
+float Kp=2, Kd=0.00, Ki=4, Tm=0.1;            // modify for optimal performance
 
 
-//variables de ROs
-float vx=0;
-float w=0;
-
-//ROS CALLBACK FUNCTION
-void cmd_vel_cb( const geometry_msgs::Twist& twist){
-  vx = twist.linear.x;
-  w = twist.angular.z;
-} 
 
 
-ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", cmd_vel_cb );
+
 
 void setup() {
-   nh.initNode();
-   nh.subscribe(sub);
+  Serial.begin(9600);
 
   pinMode (encoderPinA, INPUT_PULLUP);
   pinMode (encoderPinB, INPUT_PULLUP);
   attachInterrupt (digitalPinToInterrupt (encoderPinA), readEncoderA, CHANGE);
   attachInterrupt (digitalPinToInterrupt (encoderPinB), readEncoderB, CHANGE);
   
-  pinMode(motorDir, OUTPUT);
+  pinMode(motorDir1, OUTPUT);
+  pinMode(motorDir2, OUTPUT);
   pinMode(motorpwm, OUTPUT);
 
   TCCR1B = TCCR1B & 0b11111000 | 1;
 
+
+  // Set initial values
+  setpoint = 30; //RPM
+  
+  //velocity rad/seg max 2.6
+  //maximo sin carga 7.9 rad/seg or 76rpm. 
+
 }
 
-void loop(){
+void loop() {
 
   unsigned long currentMillis = millis();
-
-  //MOTOR VELOCITY
-  if((currentMillis - previousMillis)>= interval){
+  if((currentMillis - previousMillis)>= dt) {
     previousMillis = currentMillis;
+    input = 10*encoderValue *( 60 / (double)counts) ; //rpm del eje principal  
+    encoderValue=0; //velocidad
+  } 
 
-    input = 10* encoderValue * (2*PI/8400.0) ; //rad/seg
-    encoderValue = 0;
-  }
-
-  //
-  setpoint= 10*vx-5.985*w; //left//max 7.8 rad/s
-  setpoint=-setpoint;
+  //PID Control
+  
   error = setpoint - input;
-
-
-  //PID CONTROLLER
   output = cv1 + (Kp + Kd/Tm)*error + (-Kp + Ki*Tm - 2*Kd/Tm)*error1+ (Kd/Tm)*error2 ;
   cv1 = output;
   error2 = error1;
   error1 = error;
 
-  //SATURATION
   if(output > 255.0){
     output = 255.0;
   }else if (output < -255.0) {
     output = -255.0;
   }
 
-  //OUTPUT
+  
   pwmOut(output);
-
-  nh.spinOnce();
+  
+  Serial.print(setpoint);
+  Serial.print(",");
+  Serial.print(input);
+  Serial.print(",");
+  Serial.println(output);
   delay(100);
-
 }
+
+
 
 void readEncoderA()
 {
@@ -121,16 +109,18 @@ void readEncoderB()
 }
 
 void forward () {
-  digitalWrite(motorDir, LOW); 
+  digitalWrite(motorDir1, HIGH);
+  digitalWrite(motorDir2, LOW); 
   
 }
 void reverse () {
-  digitalWrite(motorDir, HIGH); 
+  digitalWrite(motorDir1, LOW); 
+  digitalWrite(motorDir2, HIGH);
   
 }
 
 
-void pwmOut(float out) {
+void pwmOut(int out) {
   if (out > 0) {  // if output > 0, move motor in forward direction
     analogWrite(motorpwm, out);
     forward();

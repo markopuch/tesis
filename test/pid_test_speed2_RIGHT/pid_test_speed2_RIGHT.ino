@@ -16,15 +16,15 @@ void setup(){
 void loop(){
 
   
-  setpoint= 10*vx-5.985*w; //max 7.8 rad/s
-  setpoint=-setpoint;
+  setpoint= 10*vx+5.985*w; //max 7.8 rad/s
+  
   control_pid();
   pwmOut(output);
   
   Serial.print(setpoint);
   Serial.print(",");
-//  Serial.print(output);
-//  Serial.print(","); 
+  Serial.print(output);
+  Serial.print(",");
   Serial.println(pv);
 
   delay(100);

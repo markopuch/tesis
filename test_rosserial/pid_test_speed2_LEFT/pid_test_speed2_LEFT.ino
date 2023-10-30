@@ -23,8 +23,8 @@ void loop(){
   
   Serial.print(setpoint);
   Serial.print(",");
-//  Serial.print(output);
-//  Serial.print(","); 
+  Serial.print(output);
+  Serial.print(","); 
   Serial.println(pv);
 
   delay(100);

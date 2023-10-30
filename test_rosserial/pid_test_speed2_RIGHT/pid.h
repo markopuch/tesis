@@ -13,7 +13,7 @@ long interval = 100;
 
 float output, cv1, error, error1, error2;
 float Kp=2, Kd=0.00, Ki=50, Tm=0.1;
-float vx= 0.3;
+float vx= 0.1;
 float w=0.0;
 
 
@@ -69,11 +69,11 @@ void readEncoderB()
 }
 
 void forward () {
-  digitalWrite(motorDir, HIGH); 
+  digitalWrite(motorDir, LOW); 
   
 }
 void reverse () {
-  digitalWrite(motorDir, LOW); 
+  digitalWrite(motorDir, HIGH); 
   
 }
 
@@ -86,5 +86,6 @@ void pwmOut(float out) {
   else {  // if output < 0, move motor in reverse direction
     analogWrite(motorpwm, abs(out));
     reverse();
+
   }
 }
