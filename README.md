@@ -8,7 +8,7 @@ https://answers.ros.org/question/12684/using-multiple-arduinos-running-multiple-
 rospy.init_node("serial_node", anonymous=True) 
 rospy.loginfo("ROS Serial Python Node {}".format(rospy.get_caller_id()))
     
-
+on raspberry pi : /opt/ros/{DISTRO}/lib/rosserial_python/serial_node.py
 
 
 use this comand to try in one arduino nano:
