@@ -42,5 +42,7 @@ USB CAM
 follow this tutorial http://wiki.ros.org/usb_cam
 
 git clone https://github.com/ros-drivers/usb_cam.git
+
 roslaunch usb_cam usb_cam.launch
+
 rosrun image_view image_view image:=/usb_cam/image_raw
