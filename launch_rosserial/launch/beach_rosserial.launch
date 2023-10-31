@@ -16,7 +16,4 @@
     <param name="baud" value="57600"/>
   </node>
   
-  <!-- <node pkg="rqt_robot_steering" type="rqt_robot_steering" name="rqt_robot_steering">
-  </node> -->
-
 </launch>
