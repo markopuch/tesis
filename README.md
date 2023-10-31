@@ -46,3 +46,14 @@ git clone https://github.com/ros-drivers/usb_cam.git
 roslaunch usb_cam usb_cam.launch
 
 rosrun image_view image_view image:=/usb_cam/image_raw
+
+
+
+
+BEACH CLEANER ROBOT
+--------------------
+
+RUN ON YOUR RASPBERRY OR JETSON
+roslaunch launch_rosserial beach_cleaner.launch
+
+Run on your computer a twist message publisher
