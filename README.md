@@ -2,6 +2,9 @@
 development of a beach clenaer autonomous mobile robot
 you need to locate your files in the correct folder. 
 
+
+ROSSERIAL_PYTHON FOR MULTIPLE ARDUINOS (UPDATE)
+------------------------
 you need to change the serial_node.py file to run multiple arduinos: 
 https://answers.ros.org/question/12684/using-multiple-arduinos-running-multiple-nodes/
 
@@ -14,10 +17,12 @@ on raspberry pi : /opt/ros/{DISTRO}/lib/rosserial_python/serial_node.py
 use this comand to try in one arduino nano:
 rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0
 
+IMU BNO055
 ----------------------------------------------
 FOLLOW THIS TUTORIAL FOR BNO005
 https://automaticaddison.com/visualize-imu-data-using-the-bno055-ros-and-jetson-nano/
 
+GPS UBLOX
 ---------------------------------------------
 FOLLOW THIS TUTORIAL http://wiki.ros.org/nmea_navsat_driver
 FOR KINETIC
@@ -32,7 +37,7 @@ Finally, change the the first line in all the files you have copied to:
 
 Also, don't forget to update your launch file. 
 
-asdasdsadsa
+USB CAM
 ---------------------------
 follow this tutorial http://wiki.ros.org/usb_cam
 
