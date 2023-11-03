@@ -20,7 +20,8 @@ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0
 IMU BNO055
 ----------------------------------------------
 FOLLOW THIS TUTORIAL FOR BNO005
-https://automaticaddison.com/visualize-imu-data-using-the-bno055-ros-and-jetson-nano/
+https://automaticaddison.com/how-to-publish-imu-data-using-ros-and-the-bno055-imu-sensor/
+
 
 GPS UBLOX
 ---------------------------------------------
