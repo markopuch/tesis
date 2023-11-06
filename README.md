@@ -5,6 +5,11 @@ This repository contains code and instructions for the development of an autonom
 ## STATUS:
 the rosserial is in conflict when you set up all the sensors. I don't know yet where and when I made that conflict. I think it is the uart configuration. 
 
+## AVLABS:
+CODIGO GRATIS DE ROBOTICA AVANZADA EN UTEC 2023
+SOLO TENGO EL ROSSERIAL EN LAB6
+URDF DEL MINI CHEETAH RVIZ Y DH PYBULLET 
+ 
 ## Arduino Code for Arduino:
 
 - `encoder_test`: Use this code to determine the counts your encoder generates per revolution of the motor.
