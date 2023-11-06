@@ -20,7 +20,7 @@ URDF DEL MINI CHEETAH RVIZ Y DH PYBULLET
 
 ## rosserial_python for Multiple Arduinos (Update)
 
-To run multiple Arduinos, you need to make a modification to the `serial_node.py` file. More information can be found [here](https://answers.ros.org/question/12684/using-multiple-arduinos-running-multiple-nodes/).
+To run multiple Arduinos, you need to make a modification to the `serial_node.py` file. More information can be found [here](https://answers.ros.org/question/12684/using-multiple-arduinos-running-multiple-nodes/). (CHECK serial_node.py)
 
 ```python
 rospy.init_node("serial_node", anonymous=True)
