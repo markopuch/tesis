@@ -77,6 +77,8 @@ Don't forget to update your launch file accordingly.
 
 If you plan to use UART pins on your Raspberry Pi, follow this guide for configuration: [Raspberry Pi UART Communication Using Python and C](https://www.electronicwings.com/raspberry-pi/raspberry-pi-uart-communication-using-python-and-c).
 
+### USE ublox_files and copy all the files in nmea_navsat_driver and replace
+
 ## USB CAM
 
 To set up a USB camera, you can follow the tutorial available here: [usb_cam]( http://wiki.ros.org/usb_cam).
