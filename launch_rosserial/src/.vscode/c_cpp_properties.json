@@ -1,0 +1,39 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/marko/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/marko/catkin_ws/src/avlabs7/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_gazebo/hector_gazebo_plugins/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_gazebo/hector_gazebo_thermal_camera/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_localization/hector_pose_estimation/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_localization/hector_pose_estimation_core/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_actions/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_controller_gazebo/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_gazebo_plugins/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_interface/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_model/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_quadrotor_pose_estimation/include/**",
+        "/home/marko/catkin_ws/src/hector_drone_sim/hector_quadrotor_sim/hector_quadrotor/hector_uav_msgs/include/**",
+        "/home/marko/catkin_ws/src/launch_rosserial/include/**",
+        "/home/marko/catkin_ws/src/rosserial/rosserial_server/include/**",
+        "/home/marko/catkin_ws/src/rosserial/rosserial_test/include/**",
+        "/home/marko/catkin_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/marko/catkin_ws/src/turtlebot3/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/marko/catkin_ws/src/turtlebot3/turtlebot3/turtlebot3_slam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
