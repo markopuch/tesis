@@ -98,7 +98,7 @@ rosrun image_view image_view image:=/usb_cam/image_raw
 
 ## BEACH CLEANER ROBOT
 
-To run the beach cleaner robot with all the included sensors, use the following command on your Raspberry Pi or Jetson:
+To run the beach cleaner robot with all the included sensors, use the following command on your Raspberry Pi:
 
 ```
 roslaunch launch_rosserial beach_robot_bringup.launch
