@@ -1,6 +1,6 @@
 # Beach Cleaner Robot - Autonomous Mobile Robot Development
 
-This repository contains code and instructions for the development of an autonomous mobile beach cleaner robot. The robot is designed to clean beaches and is controlled using a Raspberry Pi 3. The software stack is built on the ROS Kinetic distribution, but could be use on any distro.
+This repository contains code and instructions for the development of an autonomous mobile beach cleaner robot. The robot is designed to clean beaches and is controlled using a Raspberry Pi 3. The software stack is built on the ROS Kinetic distribution.
 
 ## STATUS:
 the rosserial is in conflict when you set up all the sensors. I don't know yet where and when I made that conflict. I think it is the uart configuration. 
